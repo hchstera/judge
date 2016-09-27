@@ -14,5 +14,10 @@
             "email": "g9308370@hotmail.com"
         }
     ],
-    "minimum-stability": "beta"
+    "autoload": {
+      "psr-4": {
+        "Hchs\\Judge\\": "src/"
+      }
+    },
+    "minimum-stability": "dev"
 }
