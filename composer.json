@@ -1,0 +1,18 @@
+{
+    "name": "hchs/judge",
+    "description": "Handle Role and Permission in Laravel",
+    "type": "library",
+    "require": {
+        "laravel/laravel": "5.2.0"
+    },
+    "require-dev": {
+        "laravel/laravel": "5.2.0"
+    },
+    "authors": [
+        {
+            "name": "Hchs",
+            "email": "g9308370@hotmail.com"
+        }
+    ],
+    "minimum-stability": "beta"
+}
