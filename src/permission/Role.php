@@ -16,7 +16,6 @@ class Role extends Model
         'display_name',           // 顯示的名稱
         'description',            // 權限敘述
     ];
-
     /**
      * 設定多形中介表名稱.
      */
