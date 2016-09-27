@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Accounts\permission;
+namespace Hchs\Judge\Permission;
 
-use App\Core\Eloquent;
-use App\Accounts\User;
+use Illuminate\Database\Eloquent\Model;
+use Hchs\Judge\User;
 
-class Role extends Eloquent
+class Role extends Model
 {
     /*------------------------------------------------------------------------**
     ** Entity 定義                                                            **

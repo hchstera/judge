@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Accounts\permission;
+namespace Hchs\Judge\Permission;
 
-use App\Core\Eloquent;
-use App\Accounts\Permission\Role;
+use Illuminate\Database\Eloquent\Model;
+use Hchs\Judge\Permission\Role;
 
-class Permission extends Eloquent
+class Permission extends Model
 {
 
     /*------------------------------------------------------------------------**
@@ -14,9 +14,9 @@ class Permission extends Eloquent
 
     protected $table = 'permissions';
     protected $fillable = [
-        'name',                   // 權限名稱
+        'name',                    // 權限名稱
         'display_name',            // 顯示的名稱
-        'description',            // 權限敘述
+        'description',             // 權限敘述
     ];
 
     /*------------------------------------------------------------------------**

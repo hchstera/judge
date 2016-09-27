@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Accounts\permission;
+namespace Hchs\Judge\Permission;
 
 /**
  * 能夠確認身分及權限.
