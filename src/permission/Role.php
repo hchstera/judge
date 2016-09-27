@@ -3,7 +3,7 @@
 namespace Hchs\Judge\Permission;
 
 use Illuminate\Database\Eloquent\Model;
-use Hchs\Judge\User;
+use App\User;
 
 class Role extends Model
 {
