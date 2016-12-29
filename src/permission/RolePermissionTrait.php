@@ -39,7 +39,6 @@ trait RolePermissionTrait
 
     /**
      * sync關聯特定的role_ids.
-     *
      */
     public function syncRoles($role_ids)
     {

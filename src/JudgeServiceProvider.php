@@ -13,9 +13,13 @@ class JudgeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //  $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->publishes([
             __DIR__.'/migrations' => base_path('database/migrations'),
         ], 'migrations');
+        $this->publishes([
+            __DIR__.'/Permission' => base_path('app/Judge'),
+        ], 'judge');
     }
 
     /**
