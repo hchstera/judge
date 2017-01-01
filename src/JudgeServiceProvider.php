@@ -17,9 +17,13 @@ class JudgeServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/migrations' => base_path('database/migrations'),
         ], 'migrations');
+
         $this->publishes([
-            __DIR__.'/Permission' => base_path('app/Judge'),
-        ], 'judge');
+            __DIR__.'/../tests' => base_path('tests/judge'),
+        ], 'tests');
+        // $this->publishes([
+        //     __DIR__.'/Permission' => base_path('app/Judge'),
+        // ], 'judge');
     }
 
     /**

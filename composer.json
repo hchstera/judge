@@ -10,7 +10,7 @@
     ],
     "autoload": {
       "psr-4": {
-        "Hchs\\Judge\\": "src/"
+        "Hchs\\Judge\\": "src/",
       }
     },
     "minimum-stability": "dev"
