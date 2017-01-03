@@ -1,6 +1,6 @@
 <?php
 
-namespace Hchs\Judge;
+namespace Hchs\Judge\Permission;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -9,5 +9,5 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 abstract class AuthEloquent extends Authenticatable
 {
-    use Permission\RolePermissionTrait;
+    use RolePermissionTrait;
 }
