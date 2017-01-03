@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\TestCase as TestCase;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\Storage;
 use Exception;
+use Config;
 
 abstract class BaseTestCase extends TestCase
 {
@@ -32,8 +33,24 @@ abstract class BaseTestCase extends TestCase
         $app = require $app_path;
 
         $app->make(Kernel::class)->bootstrap();
-        Storage::put('judgetest_db.sqlite', '');
-        $this->printMessage('create judgetest_db.sqlite in ['.storage_path('app/judgetest_db.sqlite').']');
+
+        $this->setSqliteEnv();
+
         return $app;
+    }
+
+    /**
+     * Change Database connection for test environment Dynamically.
+     */
+    public function setSqliteEnv()
+    {
+        Storage::put('judgetest_db.sqlite', '');
+        Config::set('database.connections.' . 'judgetest_db', array(
+            'driver' => 'sqlite',
+            'database' => storage_path('app/judgetest_db.sqlite'),
+            'prefix' => '',
+        ));
+        Config::set('database.default', 'judgetest_db');
+        $this->printMessage("\r\n create judgetest_db.sqlite in [".storage_path('app/judgetest_db.sqlite')."]");
     }
 }
