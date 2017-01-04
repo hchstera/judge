@@ -44,13 +44,15 @@ abstract class BaseTestCase extends TestCase
      */
     public function setSqliteEnv()
     {
-        Storage::put('judgetest_db.sqlite', '');
+        if (!Storage::has('judgetest_db.sqlite')) {
+            Storage::put('judgetest_db.sqlite', '');
+            $this->printMessage("\r\n create judgetest_db.sqlite in [".storage_path('app/judgetest_db.sqlite')."]");
+        }
         Config::set('database.connections.' . 'judgetest_db', array(
             'driver' => 'sqlite',
             'database' => storage_path('app/judgetest_db.sqlite'),
             'prefix' => '',
         ));
         Config::set('database.default', 'judgetest_db');
-        $this->printMessage("\r\n create judgetest_db.sqlite in [".storage_path('app/judgetest_db.sqlite')."]");
     }
 }

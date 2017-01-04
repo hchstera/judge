@@ -18,7 +18,7 @@ class CreateRoleEndowablesTable extends Migration
 
             // 對應到 AuthEloquent ex: Admin
             $table->integer('role_endowables_id')->unsigned()->index();
-            $table->string('role_endowables_type');
+            $table->string('role_endowables_type')->index();
 
             $table->timestamps();
 

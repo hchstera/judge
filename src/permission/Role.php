@@ -3,7 +3,6 @@
 namespace Hchs\Judge\Permission;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 
 class Role extends Model
 {
@@ -19,14 +18,14 @@ class Role extends Model
     /**
      * 設定多形中介表名稱.
      */
-    private $pivot_table = 'role_endowables';
+    protected $pivot_table = 'role_endowables';
 
     /*------------------------------------------------------------------------**
     ** Relation 定義                                                          **
     **------------------------------------------------------------------------*/
     public function users()
     {
-        return $this->morphedByMany(User::class, $pivot_table)->withTimestamps();
+        return $this->morphedByMany('Hchs\Judge\Permission\FakeUser', $this->pivot_table)->withTimestamps();
     }
     public function permissions()
     {

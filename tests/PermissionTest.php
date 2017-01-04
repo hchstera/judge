@@ -13,12 +13,12 @@ class PermissionTest extends BaseTestCase
     /**
      * A basic functional test example.
      *
-     * @return void
+     * @group judge
      */
     public function testBasicExample()
     {
         $this->printTestStartMessage(__FUNCTION__);
-        
+
         $this->assertEquals(1, 1);
     }
     /**
