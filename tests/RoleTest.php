@@ -70,7 +70,7 @@ class RoleTest extends BaseTestCase
         $user = User::create(['name' => 'judge']);
 
         $user->attachRole($role);
-        $target = $role->users()->first();
+        $target = $role->fakeusers()->first();
         $this->assertEquals($target->id, 1);
         $this->assertEquals($target->name, 'judge');
     }

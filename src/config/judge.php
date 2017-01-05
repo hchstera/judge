@@ -10,6 +10,6 @@ return [
 
     'models' => [
         'users' => 'App\User',
-        // 'admins' => 'App\Admin',
+        'fakeusers' => 'Hchs\Judge\Permission\FakeUser', // for testing
     ],
 ];
