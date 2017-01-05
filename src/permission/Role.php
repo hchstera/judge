@@ -4,6 +4,7 @@ namespace Hchs\Judge\Permission;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Role extends Model
 {
     /*------------------------------------------------------------------------**
@@ -23,9 +24,13 @@ class Role extends Model
     /*------------------------------------------------------------------------**
     ** Relation 定義                                                          **
     **------------------------------------------------------------------------*/
-    public function users()
+    public function __call($name, $arguments)
     {
-        return $this->morphedByMany('Hchs\Judge\Permission\FakeUser', $this->pivot_table)->withTimestamps();
+        $judges = config('judge.models');
+        if(!array_key_exists($name, $judges))
+            throw new \Exception("No relation for model ".$name , 1);
+
+        return $this->morphedByMany($judges[$name], $this->pivot_table)->withTimestamps();
     }
     public function permissions()
     {

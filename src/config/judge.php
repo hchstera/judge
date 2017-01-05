@@ -9,13 +9,7 @@ return [
     */
 
     'models' => [
-        'User' => [
-            'namespace' => 'App\User',
-            'function_name' => 'users',
-        ],
-        // 'Admin' => [
-        //     'namespace' => 'App\Admin',
-        //     'function_name' => 'admins',
-        // ]
+        'users' => 'App\User',
+        // 'admins' => 'App\Admin',
     ],
 ];
