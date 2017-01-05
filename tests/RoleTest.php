@@ -74,4 +74,27 @@ class RoleTest extends BaseTestCase
         $this->assertEquals($target->id, 1);
         $this->assertEquals($target->name, 'judge');
     }
+    /**
+     * test Relation between User <---> Role .
+     *
+     * @group judge
+     */
+    public function testExceptionRoleToUser()
+    {
+        $this->printTestStartMessage(__FUNCTION__);
+        $role = Role::create([
+            'name' => 'admin',
+            'display_name' => 'Admin',
+            'description' => 'You are Admin'
+        ]);
+
+        $user = User::create(['name' => 'judge']);
+        $user->attachRole($role);
+
+        try {
+            $target = $role->myadmins()->first(); // got exception
+        } catch (\Exception $e) {
+            $this->assertContains('No relation for model', $e->getMessage());
+        }
+    }
 }
