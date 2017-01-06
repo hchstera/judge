@@ -51,14 +51,14 @@ Composer Package for Manage Roles and Permissions in Laravel.
 		// optional
 		$ php artisan vendor:publish --tag=tests    
 4. modify config file config/judge.php    
-
-		'models' => [
-         		'users' => 'App\User',  // set relation and namespace
-         		'fakeusers' => 'Hchs\Judge\Permission\FakeUser', // only for testing
-		]    
-        
+```php
+'models' => [
+	'users' => 'App\User',  // set relation and namespace
+	'fakeusers' => 'Hchs\Judge\Permission\FakeUser', // only for testing
+]    
+```     
 5. Auth Model extends Judge Abstract Class
-```c++
+```php
 <?php
 
 namespace App;
