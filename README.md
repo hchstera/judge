@@ -36,13 +36,13 @@ Composer Package for Manage Roles and Permissions in Laravel.
 
 ### Install
 
-1. composer require    
+1.composer require    
 
 		$ composer require hchs/judge       
-2. add Service Provider in config/app.php       
+2.add Service Provider in config/app.php       
 
 		Hchs\Judge\JudgeServiceProvider::class    
-3. run vendor:publish    
+3.run vendor:publish    
 
 		$ php artisan vendor:publish --tag=migrations    
     
@@ -50,14 +50,14 @@ Composer Package for Manage Roles and Permissions in Laravel.
     
 		// optional
 		$ php artisan vendor:publish --tag=tests    
-4. modify config file config/judge.php    
+4.modify config file config/judge.php     
 ```php
 'models' => [
 	'users' => 'App\User',  // set relation and namespace
 	'fakeusers' => 'Hchs\Judge\Permission\FakeUser', // only for testing
 ]    
 ```     
-5. Auth Model extends Judge Abstract Class
+5.Auth Model extends Judge Abstract Class
 ```php
 <?php
 
