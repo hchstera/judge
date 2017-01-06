@@ -90,6 +90,50 @@ class User extends Authenticatable
 }
 ```     
 
+### Basic Usage    
+```php
+// use Role && Permission
+use Hchs\Judge\Permission\Role;
+use Hchs\Judge\Permission\Permission;
+
+// create Role & Permission
+$role = Role::create([
+            'name' => 'admin',
+            'display_name' => 'Admin',
+            'description' => 'You are Admin'
+]);
+$permission = Permission::create([
+            'name' => 'create',
+            'display_name' => 'Create Something',
+            'description' => 'You can create something',
+]);
+// Role attachPermission
+$role->attachPermission($permission);
+
+$user = User::find(1);
+
+// attachRole
+$user->attachRole($role);
+
+$user->hasRole('admin');  //true
+$user->hasRole('basic');  //false
+$user->hasPermission('create'); //true
+$user->hasPermission('delete'); //false
+
+// detachRole
+$user->detachRole($role);
+
+$user->hasRole('admin');  //false
+$user->hasRole('basic');  //false
+$user->hasPermission('create'); //false
+$user->hasPermission('delete'); //false
+```    
+
+
+
+
+
+
 
 
 
